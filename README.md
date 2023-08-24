@@ -50,33 +50,44 @@ cette application est utilisé avec différent rôle:
 4. Activez l'environnement virtuel
 
 sur Windows:
-`  env\Scripts\activate
- `
+
+```
+env\Scripts\activate
+```
+
 sur macOS/Linux:
-` source env/bin/activate
+
+```
+source env/bin/activate
+```
 
 5. Installez les dépendances:
-   ` pip install -r requirements.txt
+
+   ```
+   pip install -r requirements.txt
+   ```
 
 6. Créer la base de donnée:
-   `  python manage.py migrate
- `
+   ```
+   python manage.py migrate
+   ```
+
 
 ## Mode de déploiemment
 
 1. Lancez le serveur en exécutant la commande suivante :
-    ` python manage.py runserver
-     `
+   ``` python manage.py runserver
+    ```
 2. Accédez à l'application dans votre navigateur à l'adresse:
- `http://localhost:8000`.
+`http://localhost:8000`.
 
- 3. Créez un compte utilisateur en fournissant les informations requises.
+3. Créez un compte utilisateur en fournissant les informations requises.
 
- 4. Connectez-vous avec vos identifiants.
+4. Connectez-vous avec vos identifiants.
 
- 5. Explorez les fonctionnalités 
+5. Explorez les fonctionnalités
 
- ## Contribution
+## Contribution
 
 Les contributions à ce projet sont les bienvenues. Voici comment vous pouvez contribuer :
 
@@ -84,20 +95,25 @@ Les contributions à ce projet sont les bienvenues. Voici comment vous pouvez co
 
 2. Créez une branche pour votre fonctionnalité ou correction de bug.
 
-   ```
-   git checkout -b fonctionnalite-incroyable
-   ```
+````
+
+git checkout -b fonctionnalite-incroyable
+
+```
 3. Ajoutez vos modifications et faites un commit.
 
-   ```
+```
+
     git add .
     git commit -m 'Fonctionnalité incroyable'
     ```
+
 4. Poussez sur la branche.
 
    ```
    git push origin fonctionnalite-incroyable
    ```
+
 5. Ouvrez une pull request.
 
 ## Construit avec
@@ -106,12 +122,6 @@ Les contributions à ce projet sont les bienvenues. Voici comment vous pouvez co
 
 - Python - [Site officiel](https://www.python.org)
 - Django - [Documentation](https://docs.djangoproject.com)
-
-### Outils
-
-#### CI
-
-- GitHub Actions - [Documentation](https://docs.github.com/actions)
 
 #### Déploiement
 
