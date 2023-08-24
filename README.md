@@ -72,14 +72,15 @@ source env/bin/activate
    python manage.py migrate
    ```
 
-
 ## Mode de déploiemment
 
 1. Lancez le serveur en exécutant la commande suivante :
-   ``` python manage.py runserver
-    ```
+
+   ```
+   python manage.py runserver
+   ```
 2. Accédez à l'application dans votre navigateur à l'adresse:
-`http://localhost:8000`.
+   `http://localhost:8000`.
 
 3. Créez un compte utilisateur en fournissant les informations requises.
 
@@ -95,16 +96,15 @@ Les contributions à ce projet sont les bienvenues. Voici comment vous pouvez co
 
 2. Créez une branche pour votre fonctionnalité ou correction de bug.
 
-````
-
-git checkout -b fonctionnalite-incroyable
-
-```
+    ````
+    git checkout -b fonctionnalite-incroyable
+    ```
 3. Ajoutez vos modifications et faites un commit.
 
-```
-
+    ```
     git add .
+    ```
+    ```
     git commit -m 'Fonctionnalité incroyable'
     ```
 
