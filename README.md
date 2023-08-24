@@ -96,7 +96,7 @@ Les contributions à ce projet sont les bienvenues. Voici comment vous pouvez co
 
 2. Créez une branche pour votre fonctionnalité ou correction de bug.
 
-    ````
+    ```
     git checkout -b fonctionnalite-incroyable
     ```
 3. Ajoutez vos modifications et faites un commit.
