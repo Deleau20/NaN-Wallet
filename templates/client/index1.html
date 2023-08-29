@@ -1,0 +1,12 @@
+{% extends '../authentification/base.html' %}
+
+{% block content %}
+{%if user.is_authenticated %}
+<h2>Bonjour {{ user.username }}, vous êtes connecté avec succès</h2>
+<button><a href="{% url 'logout' %}">Se déconnecter</a></button>
+{% else %}
+<h2>Bonjour, vous n'êtes pas connecté</h2>
+<button><a href="{% url 'register' %}">S'inscrire</a></button>
+<button><a href="{% url 'login' %}">Se connecter</a></button>
+{% endif %}
+{% endblock %}

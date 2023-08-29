@@ -1,0 +1,35 @@
+{% extends './client-base.html' %}
+{% load static %}
+{% block title %}Accueil{% endblock %}
+{% block content %}
+    <!--services section start -->
+    <div class="services_section layout_padding">
+      <div class="container">
+         <h1 class="service_taital"><span class="our_text">Nos</span>Services</h1>
+         <p class="service_text">Nous disposons de plusieurs services au sein de notre structure dans le but de répondre à tous les besoins de notre clientèle telque :</p>
+         <div class="services_section_2">
+            <div class="row">
+               <div class="col-sm-4">
+                  <div class="icon_1"><img src="{% static 'client/images/money.png' %}"></div>
+                  <h4 class="design_text">Payement En Espece</h4>
+                  <p class="lorem_text">Effectuer des payement devient un jeu d'Enfant</p>
+               </div>
+               <div class="col-sm-4">
+                  <div class="icon_3"><img src="{% static 'client/images/pay-by-card.png' %}"></div>
+                  <h4 class="design_text">Payement par carte</h4>
+                  <p class="lorem_text">Un paiement rapide et efficace sans risque de vol.</p>
+                  <div class="read_bt_2"><a href="#">Lire plus</a></div>
+               </div>
+               <div class="col-sm-4">
+                  <div class="icon_1"><img src="{% static 'client/images/online-payment.png' %}"></div>
+                  <h4 class="design_text">Payement par banque</h4>
+                  <p class="lorem_text">suivez votre budget avec la trace de vos opperation bancaire</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--services section end -->
+{% endblock content %}
+  
+     
