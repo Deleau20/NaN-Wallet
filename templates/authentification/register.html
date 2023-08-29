@@ -1,38 +1,111 @@
-{% extends './base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .couleur{
+        background-color: #6870e0;
+      }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>NaN-Wallet</title>
+    <!-- plugins:css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'staff/vendors/feather/feather.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'staff/vendors/ti-icons/css/themify-icons.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'staff/vendors/css/vendor.bundle.base.css' %}"
+    />
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'staff/css/vertical-layout-light/style.css' %}"
+    />
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{% static 'staff/images/favicon.png' %}" />
+  </head>
+  <body>
 
-{% block content %}
-<center>
-<h4>Register here</h4>
-{% for message in messages %}
-{{ message }}
-{% endfor %}
-    <form action="{% url 'register' %}" method="post">
-        {% csrf_token %}
-        <div>
-            <label for="username">Nom d'utilisateur</label>
-            <input type="text" name="username" id="username" placeholder="Nom d'utilisateur" required>
+<div class="container-scroller">
+  <div class="container-fluid page-body-wrapper full-page-wrapper">
+    <div class="content-wrapper d-flex align-items-center auth px-0">
+      <div class="row w-100 mx-0">
+        <div class="col-lg-4 mx-auto">
+          <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+            <div class="brand-logo">
+              <img src="{% static 'staff/images/logo.svg' %}" alt="logo">
+            </div>
+            <h4>Register here</h4>
+            {% for message in messages %}
+              {{ message }}
+            {% endfor %}
+            <form action="{% url 'register' %}" method="post" class="pt-3">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" name="username" id="username" class="form-control form-control-lg" placeholder="Nom d'utilisateur" required>
+              </div>
+              <div class="form-group">
+                <label for="firstname">Prenom</label>
+                <input type="text" name="firstname" id="firstname" class="form-control form-control-lg" placeholder="Prenom" required>
+              </div>
+              <div class="form-group">
+                <label for="lastname">Nom</label>
+                <input type="text" name="lastname" id="lastname" class="form-control form-control-lg" placeholder="Nom" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Adresse email</label>
+                <input type="email" name="email" id="email" class="form-control form-control-lg" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="password" class="form-control form-control-lg" required>
+              </div>
+              <div class="form-group">
+                <label for="password_confirm">Confirmer le mot de passe</label>
+                <input type="password" name="password_confirm" id="password_confirm" class="form-control form-control-lg" required>
+              </div>
+              <div class="mt-3">
+                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">S'INSCRIRE</button>
+              </div>
+              <div class="text-center mt-4 font-weight-light">
+                Already have an account? <a href="{% url 'login' %}" class="text-primary">Login</a>
+              </div>
+            </form>
+          </div>
         </div>
-        <div>
-            <label for="firstname">Prenom</label>
-            <input type="text" name="firstname" id="firstname" placeholder="Nom d'utilisateur" required>
-        </div>
-        <div>
-            <label for="lastname">Nom</label>
-            <input type="text" name="lastname" id="lastname" placeholder="Nom d'utilisateur" required>
-        </div>
-        <div>
-            <label for="email">Adresse email</label>
-            <input type="email" name="email" id="email" required>
-        </div>
-        <div>
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-        <div>
-            <label for="password_confirm">Confirmer le mot de passe</label>
-            <input type="password" name="password_confirm" id="password_confirm" required>
-        </div>
-        <input type="submit" value="S'inscrire">
-    </form>
-</center>
-{% endblock %}
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="{% static 'staff/vendors/js/vendor.bundle.base.js' %}"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="{% static 'staff/js/off-canvas.js' %}"></script>
+<script src="{% static 'staff/js/hoverable-collapse.js' %}"></script>
+<script src="{% static 'staff/js/template.js' %}"></script>
+<script src="{% static 'staff/js/settings.js' %}"></script>
+<script src="{% static 'staff/js/todolist.js' %}"></script>
+<!-- endinject -->
+</body>
+</html>
