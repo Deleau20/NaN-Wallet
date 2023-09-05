@@ -25,7 +25,7 @@ urlpatterns = [
     # path('comptes/', include('app.comptes.urls')),
     # path('staff/', include('app.gestionnaires.urls')),
     # path('transa/', include('app.transactions.urls')),
-    # path('users/', include('app.utilisateurs.urls')),
+    path('users/', include('app.utilisateurs.urls')),
     path('auth/', include('app.authentification.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+        <title>Accueil</title>
+        <link rel="stylesheet" href="{% static 'client/confirmation.css' %}">
+</head>
+    <body>
+        <p>Vous avez été bien connecté</p>
+        <a href="{% url 'dash_client' %}">
+            <button>
+                Commencer
+            </button>
+        </a>
+    </body>
+
+</html>

@@ -1,111 +1,92 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      .couleur{
-        background-color: #6870e0;
-      }
-    </style>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>NaN-Wallet</title>
-    <!-- plugins:css -->
-    <link
-      rel="stylesheet"
-      href="{% static 'staff/vendors/feather/feather.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'staff/vendors/ti-icons/css/themify-icons.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'staff/vendors/css/vendor.bundle.base.css' %}"
-    />
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link
-      rel="stylesheet"
-      href="{% static 'staff/css/vertical-layout-light/style.css' %}"
-    />
-    <!-- endinject -->
-    <link rel="shortcut icon" href="{% static 'staff/images/favicon.png' %}" />
-  </head>
-  <body>
 
-<div class="container-scroller">
-  <div class="container-fluid page-body-wrapper full-page-wrapper">
-    <div class="content-wrapper d-flex align-items-center auth px-0">
-      <div class="row w-100 mx-0">
-        <div class="col-lg-4 mx-auto">
-          <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-            <div class="brand-logo">
-              <img src="{% static 'staff/images/logo.svg' %}" alt="logo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | NaN-WalleT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'staff/assets/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'staff/assets/vendors/bootstrap-icons/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'staff/assets/css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'staff/assets/css/pages/auth.css' %}">
+</head>
+
+<body>
+    <div id="auth">
+
+        <div class="row h-100">
+            <div class="col-lg-5 col-12">
+                <div id="auth-left">
+                    {% comment %} <div class="auth-logo">
+                        <a href="{% url 'home' %}"><img src="{% static 'staff/assets/images/logo/logo.png' %}" alt="Logo"></a>
+                    </div> {% endcomment %}
+                    <h1 class="auth-title">S'inscrire</h1>
+                    <p class="auth-subtitle mb-5">Saisissez vos données pour créer un compte.</p>
+
+                    <form action="{% url 'register' %}" method="post">
+                        {% csrf_token %}
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="text" name="username" id="username" class="form-control form-control-xl" placeholder="Nom d'utilisateur" required>
+                        <div class="form-control-icon">
+                            <i class="bi bi-person"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="text" name="firstname" id="firstname" class="form-control form-control-xl" placeholder="Prenom" required>
+                        <div class="form-control-icon">
+                            <i class="bi bi-person"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="text" name="lastname" id="lastname" class="form-control form-control-xl" placeholder="Nom" required>
+                        <div class="form-control-icon">
+                            <i class="bi bi-person"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="email" name="email" id="email" class="form-control form-control-xl" placeholder="Email" required>
+                        <div class="form-control-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="password" name="password" id="password" class="form-control form-control-xl" placeholder="Mot de passe" required>
+                        <div class="form-control-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group position-relative has-icon-left mb-4">
+                        <input type="password" name="password_confirm" id="password_confirm" class="form-control form-control-xl" placeholder="Confirmer le mot de passe" required>
+                        <div class="form-control-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                    </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">S'inscrire</button>
+                    </form>
+                    <div class="text-center mt-5 text-lg fs-4">
+                        <p class='text-gray-600'>Vous avez déjà un compte ? <a href="{% url 'login' %}"
+                                class="font-bold">Se connecter</a>.</p>
+                    </div>
+                </div>
             </div>
-            <h4>Register here</h4>
-            {% for message in messages %}
-              {{ message }}
-            {% endfor %}
-            <form action="{% url 'register' %}" method="post" class="pt-3">
-              {% csrf_token %}
-              <div class="form-group">
-                <label for="username">Nom d'utilisateur</label>
-                <input type="text" name="username" id="username" class="form-control form-control-lg" placeholder="Nom d'utilisateur" required>
-              </div>
-              <div class="form-group">
-                <label for="firstname">Prenom</label>
-                <input type="text" name="firstname" id="firstname" class="form-control form-control-lg" placeholder="Prenom" required>
-              </div>
-              <div class="form-group">
-                <label for="lastname">Nom</label>
-                <input type="text" name="lastname" id="lastname" class="form-control form-control-lg" placeholder="Nom" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Adresse email</label>
-                <input type="email" name="email" id="email" class="form-control form-control-lg" required>
-              </div>
-              <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" name="password" id="password" class="form-control form-control-lg" required>
-              </div>
-              <div class="form-group">
-                <label for="password_confirm">Confirmer le mot de passe</label>
-                <input type="password" name="password_confirm" id="password_confirm" class="form-control form-control-lg" required>
-              </div>
-              <div class="mt-3">
-                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">S'INSCRIRE</button>
-              </div>
-              <div class="text-center mt-4 font-weight-light">
-                Already have an account? <a href="{% url 'login' %}" class="text-primary">Login</a>
-              </div>
-            </form>
-          </div>
+            <div class="col-lg-7 d-none d-lg-block">
+                <div id="auth-right">
+                    {% comment %} <div class="auth-logo">
+                        <a href="{% url 'home' %}"><img src="{% static 'staff/assets/images/logo/logo.png' %}" alt="Logo"></a>
+                    </div> {% endcomment %}
+                </div>
+            </div>
         </div>
-      </div>
+
     </div>
-    <!-- content-wrapper ends -->
-  </div>
-  <!-- page-body-wrapper ends -->
-</div>
-<!-- container-scroller -->
-<!-- plugins:js -->
-<script src="{% static 'staff/vendors/js/vendor.bundle.base.js' %}"></script>
-<!-- endinject -->
-<!-- Plugin js for this page -->
-<!-- End plugin js for this page -->
-<!-- inject:js -->
-<script src="{% static 'staff/js/off-canvas.js' %}"></script>
-<script src="{% static 'staff/js/hoverable-collapse.js' %}"></script>
-<script src="{% static 'staff/js/template.js' %}"></script>
-<script src="{% static 'staff/js/settings.js' %}"></script>
-<script src="{% static 'staff/js/todolist.js' %}"></script>
-<!-- endinject -->
 </body>
+
 </html>
